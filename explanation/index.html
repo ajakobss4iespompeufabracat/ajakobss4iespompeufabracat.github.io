@@ -48,6 +48,14 @@
     </div>
   </div>
 </nav>
-<h1>Hello world</h1>
+<h1>Explicació del codi</h1>
+    <pre><code>
+      let fft;//crea espai a la memòria anomenat fft
+      fft=new p5.FFT();//crea objecte
+      let bass=fft.getEnergy("bass");//crea variable greu
+      let treble=fft.getEnergy("treble");//crea variable aguda
+      let r=map(treble,0,255,50,255);//crea color vermell
+      let g=map(treble,0,255,50,255);//crea color verd
+    </code></pre>
 </body>
 </html>
