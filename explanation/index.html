@@ -51,11 +51,23 @@
 <h1>Explicació del codi</h1>
     <pre><code>
       let fft;//crea espai a la memòria anomenat fft
-      fft=new p5.FFT();//crea objecte
-      let bass=fft.getEnergy("bass");//crea variable greu
+      fft=new p5.FFT();//crea objecte de la classe fft que té totes les característiques d'una transformada de Fourier ràpida
+      //let alba;crearia un espai a la memòria per un objecte anomenat alba
+      //alba=new Homosapiens();crearia un objecte de la classe Homosapiens amb totes les seves característiques
+      //per exemple el metode getEnergy()faria la característica humana de menjar
+      //si vull fer menjar a l'alba he d'escriure alba.getenergy();això es diu el mètode del punt,que al posar un punt
+      //aplico un mètode, per fer-lo estudiar alba.study(). Study i getEnergy són mètodes de la classe Homosapiens
+       let bass=fft.getEnergy("bass");//crea variable greu
+       //getEnergy("bass") calcula la energia de totes les freqüències greus i dona un número entre 0 i 255 i aquest número el
+      //guarda en una variable anomenada bass.
       let treble=fft.getEnergy("treble");//crea variable aguda
+      //calcula la energia de totes les freqüències agudes i dona un número entre 0 i 255i el guardes en treble.
       let r=map(treble,0,255,50,255);//crea color vermell
+      //la línia anterior converteix els sons aguts en tons vermellosos perquè l'hem anomenat r de red, ara mateix no es un color,
+      // és un número però quan faci full(r,0,0);donarà tons vermelloso, perquè fill omple de color.
+      //si poses fill(bass,0,0);també funcionaria, perquè el bass va entre 0 i 255 i el color també
       let g=map(treble,0,255,50,255);//crea color verd
+      //fem un truc de mapejar el valors petits de bass a valors una mica més grans de r canviant el 0 per 50.
     </code></pre>
 </body>
 </html>
